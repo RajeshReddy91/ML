@@ -1,0 +1,16 @@
+
+aws --profile sandbox-exec ec2 describe-instances
+
+aws ec2 describe-instances --profile sandbox-exec
+
+aws s3api list-objects-v2 --profile sandbox-exec --bucket antm-cdl-playground-on-cloud-useast1 
+
+aws s3api get-bucket-location --profile sandbox-exec --bucket antm-cdl-playground-on-cloud-useast1
+
+aws s3api list-buckets --profile sandbox-exec
+
+aws s3api select-object-content  --profile sandbox-exec  
+--bucket "antm-cdl-playground-on-cloud-useast1"    
+--key "s3://antm-cdl-playground-on-cloud-useast1/sample.csv"    
+--expression "select count(*) from s3object s" --expression-type 'SQL'  
+--input-serialization {"CSV": {"FileHeaderInfo": "USE"}} --output-serialization {"CSV":{}} "sample2.csv" 
