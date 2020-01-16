@@ -1,6 +1,0 @@
-y = data['ClmAdmitDiagnosisCode'].tolist()
-z=[]
-for i in y:#.split()
-    if i[0][0] in ['V','E']:
-        z.append(i)
-# To get strings whose first character is in (V, E)
